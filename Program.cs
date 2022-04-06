@@ -74,7 +74,7 @@ app.MapGet("/stack", () =>
 // Example https://localhost:7223/stack?n=Dungeon
 app.MapPost("/stack", (string n) =>
 {
-    datastack.Pop();
+    datastack.Pop();    
     datastack.Push(n);
     return datastack;
 });
@@ -91,6 +91,7 @@ app.MapGet("/queue", () =>{
     return dataqueue;
 });
 
+// Example https://localhost:7223/queue?n=speed%20buff
 app.MapPost("/queue", (string n) =>{
     dataqueue.Dequeue();
     dataqueue.Enqueue(n);
